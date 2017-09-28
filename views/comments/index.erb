@@ -1,0 +1,11 @@
+<h1><%= @page_header %></h1>
+
+<h2>YoutTube video</h2>
+
+<% @comments.each do |comment| %>
+
+	<h2>Comment Tile: <%= comment[:title] %></h2>
+	<h2>Comment Body: <%= comment[:body] %></h2>
+	<h2>Comment URL: <%= comment[:url] %></h2>
+
+<% end %>

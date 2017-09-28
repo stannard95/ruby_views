@@ -4,8 +4,9 @@
 
 <% @comments.each do |comment| %>
 
-	<h2>Comment Tile: <%= comment[:title] %></h2>
-	<h2>Comment Body: <%= comment[:body] %></h2>
-	<h2>Comment URL: <%= comment[:url] %></h2>
+	<iframe width="500" height="315" src="https://www.youtube.com/embed/<%= comment[:url] %>" frameborder="0" allowfullscreen></iframe>
+	<h2>Comment Title: <%= comment[:title] %></h2>
+	<h2>Comment Description: <%= comment[:description] %></h2>
+	
 
 <% end %>

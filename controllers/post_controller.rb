@@ -10,16 +10,16 @@ class PostsController < Sinatra::Base
 
     $comments = [{
       title: "Comment 1",
-      body: "This is the first comment",
-      url: "youtubeUrl"
+      description: "This is the first comment",
+      url: "ncw8qlik6DA"
   }, {
       title: "Comment 2",
-      body: "This is the second comment",
-      url: "youtubeUrl"
+      description: "This is the second comment",
+      url: "pxFZYIeUuyg"
   }, {
       title: "Comment 3",
-      body: "This is the third comment",
-      url: "youtubeUrl"
+      description: "This is the third comment",
+      url: "BBDmdqXTwGY"
   }]
 
   # Returns all the videos with comments

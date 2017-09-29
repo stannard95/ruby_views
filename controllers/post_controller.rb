@@ -11,15 +11,21 @@ class PostsController < Sinatra::Base
     $comments = [{
       title: "Comment 1",
       description: "This is the first comment",
-      url: "ncw8qlik6DA"
+      url: "ncw8qlik6DA",
+      width: "500",
+      height: "315"
   }, {
       title: "Comment 2",
       description: "This is the second comment",
-      url: "pxFZYIeUuyg"
+      url: "pxFZYIeUuyg",
+      width: "500",
+      height: "315"
   }, {
       title: "Comment 3",
       description: "This is the third comment",
-      url: "BBDmdqXTwGY"
+      url: "BBDmdqXTwGY",
+      width: "500",
+      height: "315"
   }]
 
 
@@ -43,7 +49,7 @@ class PostsController < Sinatra::Base
   end
 
 
-  #EDIT
+  #edit and update a element in the array
   get "/comments/:id/edit" do
     @id = params[:id].to_i
     @comment = $comments[@id]
@@ -56,6 +62,8 @@ class PostsController < Sinatra::Base
     $comments[id][:title] = params[:title]
     $comments[id][:description] = params[:description]
     $comments[id][:url] = params[:url]
+    $comments[id][:width] = params[:width]
+    $comments[id][:height] = params[:height]
     redirect "/comments"
   end
 
@@ -67,7 +75,9 @@ class PostsController < Sinatra::Base
       new_video = {
         title: params[:title],
         description: params[:description],
-        url: params[:url]
+        url: params[:url],
+        width: params[:width],
+        height: params[:height]
       }
       $comments.push(new_video)
       redirect '/comments'

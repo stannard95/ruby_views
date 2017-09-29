@@ -2,11 +2,12 @@
 
 <h2>YoutTube video</h2>
 
-<% @comments.each do |comment| %>
+<% @comments.each_with_index do |comment, index| %>
 
 	<iframe width="500" height="315" src="https://www.youtube.com/embed/<%= comment[:url] %>" frameborder="0" allowfullscreen></iframe>
 	<h2>Comment Title: <%= comment[:title] %></h2>
 	<h2>Comment Description: <%= comment[:description] %></h2>
+	<a href="/comments/<%= index %>">View</a>
 	
 
 <% end %>

@@ -22,6 +22,7 @@ class PostsController < Sinatra::Base
       url: "BBDmdqXTwGY"
   }]
 
+
   # Returns all the videos with comments
   get '/comments' do
     @page_header = "All the comments"
@@ -30,9 +31,29 @@ class PostsController < Sinatra::Base
   end
 
 
+  # Returns an element from the array
   get '/comments/:id' do
     id = params[:id].to_i #Index
     @comment = $comments[id] #Creates element, accesses it from $comments
-    erb :"show" #file path for page
+    erb :"/comments/show" #file path for page
   end
+
+
+  #directs to 'new video' page
+  get '/comments/new' do
+    erb :"comments/new"
+  end
+
+
+  # Pushes a new element into the array
+  post '/comments' do
+      puts params
+      "done."
+      new_video = {
+        title: params[:title],
+        description: params[:description]
+      }
+      $comments.push(new_video)
+      redirect '/comments'
+    end
 end

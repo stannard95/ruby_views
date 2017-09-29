@@ -1,0 +1,19 @@
+<h1>Edit Video</h1>
+
+<%= @comment %>
+
+<form action="/comments/<%= @id %>" method="POST">
+	<label for="title">Title: </label>
+	<input type="text" name="title" value="<%= @comment[:title] %>">
+
+	<label for="Description">Description: </label>
+	<input type="text" name="title" value="<%= @comment[:description] %>">
+
+	<label for="url">Url: </label>
+	<input type="text" name="url" value="<%= @comment[:url] %>">
+
+	<input type="hidden" name="_method" value="PUT">
+
+	<input type="submit" value ="UPDATE">
+
+</form>
